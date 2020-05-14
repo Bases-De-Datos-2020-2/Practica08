@@ -24,7 +24,12 @@ WHERE MiembroAsociacion.EsChofer == TRUE;
 SELECT COUNT(*) AS total FROM Estudiante;
 
 -- Ejercicio 2.5 
-SELECT COUNT(*) AS total FROM Profesor;
-
+SELECT COUNT(*) AS total FROM Profesor;                                           
+--3 
+SELECT marca x, modelo y, ano z AS A, B
+FROM vehiculo                                                
+WHERE COUNT(SELECT marca a, modelo b , ano c as B
+            WHERE x.marca = a.marca AND y.modelo = b.modelo AND z.ano = c.ano;
+--4
 SELECT Nombre, No_Viajes FROM MiembroAsociacion
 JOIN(SELECT EXTRACT(MOUNT FROM Fecha),EXTRACT(YEAR FROM Fecha) FROM Viaja)
