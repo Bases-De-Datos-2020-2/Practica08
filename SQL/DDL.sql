@@ -25,3 +25,6 @@ SELECT COUNT(*) AS total FROM Estudiante;
 
 -- Ejercicio 2.5 
 SELECT COUNT(*) AS total FROM Profesor;
+
+SELECT Nombre, No_Viajes FROM MiembroAsociacion
+JOIN(SELECT EXTRACT(MOUNT FROM Fecha),EXTRACT(YEAR FROM Fecha) FROM Viaja)
